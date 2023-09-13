@@ -2,26 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.john {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), center / cover no-repeat url('/assets/john_wick.jpg');
+  /* background: center / cover no-repeat url('/assets/john_wick.jpg') ; */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@media screen and (max-width: 580px) {
+  /* Mobile View CSS */
+
+/* Add a class for the mobile container */
+.mobile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Style the navigation menu items for mobile */
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.1); /* Adjust the background color as needed */
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.mobile-menu-item img {
+  width: 20px; /* Adjust the size of the icons as needed */
+  margin-right: 10px;
+}
+
+/* Style the movie details for mobile */
+.mobile-movie-details {
+  text-align: center;
+  padding: 10px;
+}
+
+.mobile-movie-details img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mobile-movie-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.mobile-movie-genre {
+  font-size: 14px;
+}
+
+.mobile-movie-overview {
+  font-size: 16px;
+}
+
+.mobile-movie-release-date {
+  font-size: 14px;
+}
+
+.mobile-movie-runtime {
+  font-size: 14px;
+}
+
+.mobile-movie-tagline {
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* Style the movie rating and views for mobile */
+.mobile-movie-rating {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.mobile-movie-rating img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.mobile-movie-views {
+  font-size: 16px;
+}
+
+/* Style the buttons for mobile */
+.mobile-button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ff0000; /* Adjust the border color as needed */
+  background-color: rgba(255, 0, 0, 0.2); /* Adjust the background color as needed */
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  color: #ff0000; /* Adjust the text color as needed */
+}
+
+/* Style the expand arrow for mobile */
+.mobile-expand-arrow {
+  max-width: 20px;
+  height: auto;
+}
+
+/* Style the movie preview image for mobile */
+.mobile-preview-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border: 1px solid #ccc; /* Adjust the border color as needed */
+  border-radius: 5px;
+}
+
 }
