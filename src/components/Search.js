@@ -30,8 +30,8 @@ function Search({ search, setSearch, allMovies }) {
       <div className="absolute top-10 px-1 rounded-lg bg-black opacity-70 text-white w-full  overflow-y-auto">
         {allMovies.results.filter(movie => search === '' ? null : movie.title.toLowerCase().includes(search.toLowerCase())).map(movie => {
           return (
-            <Link href={`/${movie.id}`}>
-              <div key={movie.id} className="flex gap-2 h-24 w-full m-2 z-10 cursor-pointer hover:opacity-10">
+            <Link href={`/${movie.id}`} key={movie.id}>
+              <div  className="flex gap-2 h-24 w-full m-2 z-10 cursor-pointer hover:opacity-10">
                 <div className="basis-1/6 h-full">
                   <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} className="w-full h-full object-cover" alt="movie poster" />
                 </div>

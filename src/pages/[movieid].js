@@ -15,7 +15,7 @@ function MovieDetails({ movie }) {
         <div className="flex border bg-black text-white opacity-90">
             <div className="basis-1/4 ">
                 <div >
-                    <img src="/assets/Logo.png" />
+                    <img src="/assets/Logo.png" alt="logo" />
                 </div>
                 <Nav src="/assets/Home.png" text="Home" />
                 <Nav src="/assets/MovieProjector.png" text="Movies" />

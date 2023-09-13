@@ -15,7 +15,7 @@ function Header({ search, setSearch, allMovies }) {
                         86.0&nbsp;/&nbsp;100
                     </span>
                     <span className="flex gap-2">
-                        <img src="assets/orange.png" />
+                        <img src="assets/orange.png" alt="orangeboy" />
                         97%
                     </span>
                 </small>
