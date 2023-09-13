@@ -1,6 +1,16 @@
 import Nav from "@/components/Nav";
+import { useRouter } from "next/router";
 
 function MovieDetails({ movie }) {
+    const router = useRouter()
+    if(router.isFallback){
+        return (
+            <div className="loading">
+                <span>Loading</span>
+            </div>
+        )
+    }
+
     return (
         <div className="flex border bg-black text-white opacity-90">
             <div className="basis-1/4 ">
@@ -50,7 +60,7 @@ function MovieDetails({ movie }) {
                             </p>
                             <p>
                                 Runtime :{" "}
-                                <span data-testid="movie-runtime">{movie.runtime}</span>{" "}
+                                <span data-testid="movie-runtime">{movie.runtime}mins</span>{" "}
                             </p>
                             <p>Tagline: {movie.tagline}</p>
                         </div>
@@ -108,7 +118,7 @@ export async function getStaticPaths() {
     });
     return {
         paths,
-        fallback: "blocking",
+        fallback: true,
     };
 }
 //   getStaticProps

@@ -2,10 +2,11 @@ import NavBar from "./NavBar"
 
 
 
-function Header({ search, setSearch }) {
+function Header({ search, setSearch, allMovies }) {
     return (
         <div id="header" className="bg-black text-white w-screen h-screen relative pl-24 flex items-center bg-opacity-50 john">
-            <NavBar search={search} setSearch={setSearch}/>
+            <NavBar search={search} setSearch={setSearch} allMovies={allMovies}/>
+            
             <div className="flex flex-col justify-start items-start gap-4 w-96">
                 <h1 className=" text-5xl font-bold leading-10">John Wick 3 : Parabellum</h1>
                 <small className="flex gap-8">

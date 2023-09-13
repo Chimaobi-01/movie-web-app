@@ -1,9 +1,10 @@
-import Home from "@/page_structure/Home";
+import Home from "@/components/page_structure/Home";
 import { useState } from "react";
 
 function Index({ movies }) {
   const [search, setSearch] = useState("");
-  const popularMovies = movies.results.slice(0, 10);
+  const popularMovies = movies.results.slice(0, 12);
+  
 
   return (
     <>
@@ -11,6 +12,7 @@ function Index({ movies }) {
         search={search}
         setSearch={setSearch}
         popularMovies={popularMovies}
+        allMovies={movies}
       />
     </>
   );
@@ -31,9 +33,9 @@ export async function getStaticProps() {
     const response = await fetch(
       "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
       options
-    )
-    const data = await response.json();
+    ).then(res => res.json())
+    
   return {
-    props: { movies: data },
+    props: { movies: response },
   };
 }
