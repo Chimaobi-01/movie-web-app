@@ -2,7 +2,13 @@ import Nav from "@/components/Nav";
 import { useRouter } from "next/router";
 
 function MovieDetails({ movie }) {
+
     const router = useRouter()
+
+    const handleClick = () => {
+        router.push('/movies')
+    }
+
     if(router.isFallback){
         return (
             <div className="loading">
@@ -17,7 +23,7 @@ function MovieDetails({ movie }) {
                 <div >
                     <img src="/assets/Logo.png" alt="logo" />
                 </div>
-                <Nav src="/assets/Home.png" text="Home" />
+                <Nav src="/assets/Home.png" text="Home" handleClick={handleClick} />
                 <Nav src="/assets/MovieProjector.png" text="Movies" />
                 <Nav src="/assets/TVShow.png" text="TV Series" />
                 <Nav src="/assets/Calendar.png" text="Upcoming" />

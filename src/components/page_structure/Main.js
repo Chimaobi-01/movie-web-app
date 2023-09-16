@@ -24,7 +24,7 @@ function Main({ popularMovies }) {
                         return (
                             <div key={movie.id} className="card flex-col justify-start items-start gap-3 inline-flex ">
 
-                                <Link href={`/${movie.id}`}>
+                                <Link href={`/movies/${movie.id}`}>
                                     <MovieCard movie={movie} dataTestId="movie-card" />
                                 </Link>
                             </div>

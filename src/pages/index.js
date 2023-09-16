@@ -1,41 +1,17 @@
-import Home from "@/components/page_structure/Home";
-import { useState } from "react";
+import { useRouter } from "next/router"
 
-function Index({ movies }) {
-  const [search, setSearch] = useState("");
-  const popularMovies = movies.results.slice(0, 12);
-  
 
-  return (
-    <>
-      <Home
-        search={search}
-        setSearch={setSearch}
-        popularMovies={popularMovies}
-        allMovies={movies}
-      />
-    </>
-  );
+function HomePage() {
+    const router = useRouter()
+    const handleClick = () => {
+        router.push('/movies')
+
+    }
+ return(
+    <div className="h-screen flex justify-center items-center">
+        <button className="border rounded-lg p-4" onClick={handleClick}>Popular movies</button>
+    </div>
+ )
 }
 
-export default Index;
-
-export async function getStaticProps() {
-  
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZWY3ZjhjMjM5MmQxZjRmNzgyOTk3M2IyNjk4ZWRlOCIsInN1YiI6IjY1MDBjODYzZGI0ZWQ2MTAzM2EyM2E1MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LvT7OvgSzHf4zXmOywW4YEK7_AZ_WvuUax5gVzlPeBI",
-    },
-  };
-    const response = await fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
-      options
-    ).then(res => res.json())
-    
-  return {
-    props: { movies: response },
-  };
-}
+export default HomePage
