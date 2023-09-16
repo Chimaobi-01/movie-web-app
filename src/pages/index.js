@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function Index({ movies }) {
   const [search, setSearch] = useState("");
-  const popularMovies = movies.results.slice(0, 12);
+  const popularMovies = movies.results.slice(0, 10);
   
 
   return (
