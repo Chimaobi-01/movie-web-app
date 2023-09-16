@@ -6,7 +6,7 @@ function MovieDetails({ movie }) {
     const router = useRouter()
 
     const handleClick = () => {
-        router.push('/movies')
+        router.push('/')
     }
 
     if(router.isFallback){
